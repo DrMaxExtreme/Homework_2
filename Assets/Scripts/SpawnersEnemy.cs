@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +10,6 @@ public class SpawnersEnemy : MonoBehaviour
     public GameObject Enemy;
 
     private Transform[] _spawners;
-    private int _currentSpawner;
 
     void Start()
     {
@@ -29,7 +27,11 @@ public class SpawnersEnemy : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(Enemy, _spawners[Random.Range(Math.Round(_enemySpawner.childCount))]);//?
+            int tempNum = Mathf.RoundToInt(Random.Range(0, _enemySpawner.childCount));
+
+            Instantiate(Enemy, new Vector3(_spawners[tempNum].position.x, _spawners[tempNum].position.y), Quaternion.identity );
+
+            Debug.Log(tempNum);
 
             yield return new WaitForSeconds(_seconsdPerSpawn);
         }
