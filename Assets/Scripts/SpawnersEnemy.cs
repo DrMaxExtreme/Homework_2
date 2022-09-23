@@ -6,7 +6,7 @@ public class SpawnersEnemy : MonoBehaviour
 {
     [SerializeField] private Transform _enemySpawner;
     [SerializeField] private int _seconsdPerSpawn;
-    [SerializeField] private Component _enemy;
+    [SerializeField] private Enemy _enemy;
 
     private Transform[] _spawners;
 
