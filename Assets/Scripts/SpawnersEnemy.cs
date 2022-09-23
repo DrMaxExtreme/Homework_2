@@ -6,12 +6,11 @@ public class SpawnersEnemy : MonoBehaviour
 {
     [SerializeField] private Transform _enemySpawner;
     [SerializeField] private int _seconsdPerSpawn;
-
-    public GameObject Enemy;
+    [SerializeField] private Component _enemy;
 
     private Transform[] _spawners;
 
-    void Start()
+    private void Start()
     {
         _spawners = new Transform[_enemySpawner.childCount];
 
@@ -25,15 +24,17 @@ public class SpawnersEnemy : MonoBehaviour
 
     private IEnumerator Spawning()
     {
+        var waitForSeconds = new WaitForSeconds(_seconsdPerSpawn);
+
         while (true)
         {
             int tempNum = Mathf.RoundToInt(Random.Range(0, _enemySpawner.childCount));
 
-            Instantiate(Enemy, new Vector3(_spawners[tempNum].position.x, _spawners[tempNum].position.y), Quaternion.identity );
+            Instantiate(_enemy, new Vector3(_spawners[tempNum].position.x, _spawners[tempNum].position.y), Quaternion.identity );
 
             Debug.Log(tempNum);
 
-            yield return new WaitForSeconds(_seconsdPerSpawn);
+            yield return waitForSeconds;
         }
     }
 }

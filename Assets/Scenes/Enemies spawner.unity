@@ -825,6 +825,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5077241799858501706, guid: 2c79b2f9ad5b8184cb6ea860077def7e, type: 3}
     - target: {fileID: 2624883168894776645, guid: 41fa0622ceadecc4ead44e480fe818a2, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: -6770102827169232955, guid: 2c79b2f9ad5b8184cb6ea860077def7e, type: 3}
+    - target: {fileID: 2624883168894776645, guid: 41fa0622ceadecc4ead44e480fe818a2, type: 3}
       propertyPath: _enemySpawner
       value: 
       objectReference: {fileID: 55913960}
