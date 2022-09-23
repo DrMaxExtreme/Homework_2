@@ -11,5 +11,10 @@ public class Enemy : MonoBehaviour
         {
             Destroy(player.gameObject);
         }
+
+        if (collision.TryGetComponent<Floor>(out Floor floor))
+        {
+            Destroy(gameObject);
+        }
     }
 }
